@@ -21,13 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void addition(View view) {
         cups = cups + 1;
-        TextView quantityTextView = (TextView) findViewById(R.id.numbofquant);
-        quantityTextView.setText("" + cups);
+        display(cups);
     }
 
     public void substraction(View view) {
         cups = cups - 1;
+        display(cups);
+    }
+
+    public void display(int num) {
         TextView quantityTextView = (TextView) findViewById(R.id.numbofquant);
-        quantityTextView.setText("" + cups);
+        quantityTextView.setText("" + num);
     }
 }

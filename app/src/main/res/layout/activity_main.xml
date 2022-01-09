@@ -78,7 +78,8 @@
             android:backgroundTint="@color/gray"
             android:text="Order"
             android:textAllCaps="true"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:onClick="order"/>
 
 
     </LinearLayout>

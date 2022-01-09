@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
         if (cups < 0)
             cups = 0;
         display(cups);
+    }
+
+    public void order(View view) {
+        displayPrice(cups*5);
+    }
+
+    public void displayPrice(int num) {
+        TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
+        priceTextView.setVisibility(View.VISIBLE);
+        priceTextView.setText("Total = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
     }
 
     public void display(int num) {

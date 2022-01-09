@@ -46,7 +46,8 @@
                 android:layout_margin="8dp"
                 android:backgroundTint="@color/gray"
                 android:text="-"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:onClick="substraction"/>
 
             <TextView
                 android:id="@+id/numbofquant"

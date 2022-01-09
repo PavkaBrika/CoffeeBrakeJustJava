@@ -24,4 +24,10 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.numbofquant);
         quantityTextView.setText("" + cups);
     }
+
+    public void substraction(View view) {
+        cups = cups - 1;
+        TextView quantityTextView = (TextView) findViewById(R.id.numbofquant);
+        quantityTextView.setText("" + cups);
+    }
 }

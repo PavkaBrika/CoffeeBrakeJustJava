@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void substraction(View view) {
         cups = cups - 1;
+        if (cups < 0)
+            cups = 0;
         display(cups);
     }
 

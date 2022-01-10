@@ -45,10 +45,18 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setVisibility(View.VISIBLE);
         CheckBox cream = (CheckBox) findViewById(R.id.chckbx);
         boolean check = cream.isChecked();
-        if (check==true)
-        priceTextView.setText("Add whipped cream? true \nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        CheckBox chocolate = (CheckBox) findViewById(R.id.chckbx2);
+        boolean check2 = chocolate.isChecked();
+        String creamCond, chocCond;
+        if (check == true)
+            creamCond = "Whipped cream? True ";
         else
-            priceTextView.setText("Add whipped cream? false \nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+            creamCond = "Whipped cream? False ";
+        if (check2 == true)
+            chocCond = "Chocolate top? True ";
+        else
+            chocCond = "Chocolate top? False ";
+        priceTextView.setText(creamCond + "\n" + chocCond + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
     }
 
     public void display(int num) {

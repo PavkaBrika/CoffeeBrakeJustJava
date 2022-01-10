@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -36,12 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void order(View view) {
         displayPrice(cups*5);
+
     }
 
     public void displayPrice(int num) {
         TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
         priceTextView.setVisibility(View.VISIBLE);
-        priceTextView.setText("Total = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        CheckBox cream = (CheckBox) findViewById(R.id.chckbx);
+        boolean check = cream.isChecked();
+        if (check==true)
+        priceTextView.setText("Add whipped cream? true \nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        else
+            priceTextView.setText("Add whipped cream? false \nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
     }
 
     public void display(int num) {

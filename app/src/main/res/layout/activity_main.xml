@@ -16,99 +16,104 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/coffee" />
 
-    <LinearLayout
-        android:layout_width="150dp"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/numberofprice"
         android:layout_alignParentRight="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/darkgreen"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Toppings:"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
+        android:layout_marginBottom="8dp">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <CheckBox
-                android:id="@+id/chckbx"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Whipped cream"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="Quantity:"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/subs"
-                android:layout_width="45dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:backgroundTint="@color/gray"
-                android:onClick="substraction"
-                android:text="-"
-                android:textColor="@color/black" />
+            android:background="@color/darkgreen"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/numbofquant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="0"
+                android:layout_margin="8dp"
+                android:text="Toppings:"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:id="@+id/chckbx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="Whipped cream"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Quantity:"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/subs"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="@color/gray"
+                    android:onClick="substraction"
+                    android:text="-"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/numbofquant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:backgroundTint="@color/gray"
+                    android:onClick="addition"
+                    android:text="+"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
             <Button
-                android:id="@+id/add"
-                android:layout_width="45dp"
+                android:id="@+id/orderbtn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:backgroundTint="@color/gray"
-                android:onClick="addition"
-                android:text="+"
+                android:onClick="order"
+                android:text="Order"
+                android:textAllCaps="true"
                 android:textColor="@color/black" />
+
+
         </LinearLayout>
-
-        <Button
-            android:id="@+id/orderbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:backgroundTint="@color/gray"
-            android:onClick="order"
-            android:text="Order"
-            android:textAllCaps="true"
-            android:textColor="@color/black" />
-
-
-    </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/numberofprice"

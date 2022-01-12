@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -40,23 +39,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public String CheckTop(View view) {
+        String TopCond = "";
+        CheckBox top = (CheckBox) view;
+        boolean check = top.isChecked();
+        if (view.getId() == R.id.chckbx) {
+            if (check == true)
+                TopCond = "Whipped cream? True ";
+            else
+                TopCond = "Whipped cream? False ";
+        }
+        else {
+            if (check == true)
+                TopCond = "Chocolate top? True ";
+            else
+                TopCond = "Chocolate top? False ";
+        }
+        return TopCond;
+    }
+
     public void displayPrice(int num) {
         TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
         priceTextView.setVisibility(View.VISIBLE);
-        CheckBox cream = (CheckBox) findViewById(R.id.chckbx);
-        boolean check = cream.isChecked();
-        CheckBox chocolate = (CheckBox) findViewById(R.id.chckbx2);
-        boolean check2 = chocolate.isChecked();
-        String creamCond, chocCond;
-        if (check == true)
-            creamCond = "Whipped cream? True ";
-        else
-            creamCond = "Whipped cream? False ";
-        if (check2 == true)
-            chocCond = "Chocolate top? True ";
-        else
-            chocCond = "Chocolate top? False ";
-        priceTextView.setText(creamCond + "\n" + chocCond + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        priceTextView.setText(CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
     }
 
     public void display(int num) {

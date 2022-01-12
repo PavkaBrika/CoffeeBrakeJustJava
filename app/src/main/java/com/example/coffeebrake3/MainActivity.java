@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -26,13 +27,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void addition(View view) {
         cups = cups + 1;
+        if (cups > 10) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать больше 10 чашек кофе", Toast.LENGTH_SHORT);
+            toast.show();
+            cups = 10;
+        }
         display(cups);
     }
 
     public void substraction(View view) {
         cups = cups - 1;
-        if (cups < 0)
+        if (cups < 0) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать меньше 0 чашек кофе", Toast.LENGTH_SHORT);
+            toast.show();
             cups = 0;
+        }
+
         display(cups);
     }
 

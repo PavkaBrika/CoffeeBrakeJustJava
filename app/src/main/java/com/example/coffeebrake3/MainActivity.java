@@ -37,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void order(View view) {
-        displayPrice(cups*5);
+        int ToppingPrice = 0;
+        if (((CheckBox) findViewById(R.id.chckbx)).isChecked() == true)
+            ToppingPrice += 1;
+        if (((CheckBox) findViewById(R.id.chckbx2)).isChecked() == true)
+            ToppingPrice += 2;
+        displayPrice(cups*(5 + ToppingPrice));
 
     }
 

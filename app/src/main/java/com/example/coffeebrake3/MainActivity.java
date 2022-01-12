@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -28,8 +30,10 @@ public class MainActivity extends AppCompatActivity {
     public void addition(View view) {
         cups = cups + 1;
         if (cups > 10) {
+            Snackbar snackbar = Snackbar.make(view, "Вы не можете заказать больше 10 чашек кофе", Snackbar.LENGTH_SHORT);
             Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать больше 10 чашек кофе", Toast.LENGTH_SHORT);
             toast.show();
+            snackbar.show();
             cups = 10;
         }
         display(cups);
@@ -38,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
     public void substraction(View view) {
         cups = cups - 1;
         if (cups < 0) {
+            Snackbar snackbar = Snackbar.make(view, "Вы не можете заказать меньше 0 чашек кофе", Snackbar.LENGTH_SHORT);
             Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать меньше 0 чашек кофе", Toast.LENGTH_SHORT);
             toast.show();
+            snackbar.show();
             cups = 0;
         }
 

@@ -3,8 +3,10 @@ package com.example.coffeebrake3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -58,10 +60,16 @@ public class MainActivity extends AppCompatActivity {
         return TopCond;
     }
 
+    public String CheckName(View view) {
+        EditText Name = (EditText) view;
+        String OrderName = Name.getText().toString();
+        return OrderName;
+    }
+
     public void displayPrice(int num) {
         TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
         priceTextView.setVisibility(View.VISIBLE);
-        priceTextView.setText(CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        priceTextView.setText("Name: " + CheckName(findViewById(R.id.EdtTxtName)) + "\n" +  CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
     }
 
     public void display(int num) {

@@ -69,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
         boolean check = top.isChecked();
         if (view.getId() == R.id.chckbx) {
             if (check == true)
-                TopCond = "Whipped cream? True ";
+                TopCond = getString(R.string.whippedcream) + "? " + getString(R.string.True);
             else
-                TopCond = "Whipped cream? False ";
+                TopCond = getString(R.string.whippedcream) + "? " + getString(R.string.False);
         }
         else {
             if (check == true)
-                TopCond = "Chocolate top? True ";
+                TopCond = getString(R.string.chocolatetop) + "? " + getString(R.string.True);
             else
-                TopCond = "Chocolate top? False ";
+                TopCond = getString(R.string.chocolatetop) + "? " + getString(R.string.False);
         }
         return TopCond;
     }
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayPrice(int num) {
         TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
         priceTextView.setVisibility(View.VISIBLE);
-        priceTextView.setText("Name: " + CheckName(findViewById(R.id.EdtTxtName)) + "\n" +  CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        priceTextView.setText(getString(R.string.namehint) +": " + CheckName(findViewById(R.id.EdtTxtName)) + "\n" +  CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\n" + getString(R.string.total) + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\n" + getString(R.string.thankyou));
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, CheckName(findViewById(R.id.EdtTxtName)));

@@ -10,4 +10,7 @@
     <color name="green">#177245</color>
     <color name="gray">#808080</color>
     <color name="darkgreen">#013220</color>
+    <color name="lightgreen">#4da171</color>
+    <color name="darkthemedarkgreen">#0d5933</color>
+    <color name="darkthemelightgreen">#42875d</color>
 </resources>

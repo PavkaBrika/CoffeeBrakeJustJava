@@ -43,42 +43,28 @@
                 android:textColorHint="@color/white" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
                 android:text="@string/toppings"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                style="@style/TextStyle"/>
 
 
             <CheckBox
                 android:id="@+id/chckbx"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CheckBoxStyle"
                 android:layout_margin="8dp"
-                android:text="@string/whippedcream"
-                android:textColor="@color/white" />
+                android:text="@string/whippedcream" />
 
             <CheckBox
                 android:id="@+id/chckbx2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CheckBoxStyle"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="@string/chocolatetop"
-                android:textColor="@color/white" />
+                android:text="@string/chocolatetop" />
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
                 android:text="@string/quantity"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                style="@style/TextStyle" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -86,13 +72,9 @@
 
                 <Button
                     android:id="@+id/subs"
-                    android:layout_width="45dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="@color/gray"
+                    style="@style/ButtonStyle"
                     android:onClick="substraction"
-                    android:text="-"
-                    android:textColor="@color/black" />
+                    android:text="-" />
 
                 <TextView
                     android:id="@+id/numbofquant"
@@ -106,13 +88,9 @@
 
                 <Button
                     android:id="@+id/add"
-                    android:layout_width="45dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:backgroundTint="@color/gray"
+                    style="@style/ButtonStyle"
                     android:onClick="addition"
-                    android:text="+"
-                    android:textColor="@color/black" />
+                    android:text="+" />
             </LinearLayout>
 
             <Button

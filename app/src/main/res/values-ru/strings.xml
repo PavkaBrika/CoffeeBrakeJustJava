@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoffeeBrake3</string>
+    <string name="namehint">Имя</string>
+    <string name="toppings">Топпинги:</string>
+    <string name="whippedcream">Взбитые сливки</string>
+    <string name="chocolatetop">Шоколадный топ</string>
+    <string name="quantity">Количество:</string>
+    <string name="order">Заказать</string>
+    <string name="total">Итого = $0</string>
+    <string name="lessthan0cups">Вы не можете заказать меньше 0 чашек кофе</string>
+    <string name="morethan10cups">Вы не можете заказать больше 10 чашек кофе</string>
+</resources>

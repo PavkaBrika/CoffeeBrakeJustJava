@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void addition(View view) {
         cups = cups + 1;
         if (cups > 10) {
-            Snackbar snackbar = Snackbar.make(view, "Вы не можете заказать больше 10 чашек кофе", Snackbar.LENGTH_SHORT);
-            Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать больше 10 чашек кофе", Toast.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(view, getString(R.string.morethan10cups), Snackbar.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.morethan10cups), Toast.LENGTH_SHORT);
             toast.show();
             snackbar.show();
             cups = 10;
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public void substraction(View view) {
         cups = cups - 1;
         if (cups < 0) {
-            Snackbar snackbar = Snackbar.make(view, "Вы не можете заказать меньше 0 чашек кофе", Snackbar.LENGTH_SHORT);
-            Toast toast = Toast.makeText(getApplicationContext(), "Вы не можете заказать меньше 0 чашек кофе", Toast.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(view, getString(R.string.lessthan0cups), Snackbar.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.lessthan0cups), Toast.LENGTH_SHORT);
             toast.show();
             snackbar.show();
             cups = 0;

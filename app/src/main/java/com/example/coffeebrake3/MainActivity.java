@@ -2,6 +2,8 @@ package com.example.coffeebrake3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -59,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         if (((CheckBox) findViewById(R.id.chckbx2)).isChecked() == true)
             ToppingPrice += 2;
         displayPrice(cups*(5 + ToppingPrice));
-
     }
 
     public String CheckTop(View view) {
@@ -91,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.numberofprice);
         priceTextView.setVisibility(View.VISIBLE);
         priceTextView.setText("Name: " + CheckName(findViewById(R.id.EdtTxtName)) + "\n" +  CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, CheckName(findViewById(R.id.EdtTxtName)));
+        intent.putExtra(Intent.EXTRA_TEXT, "Name: " + CheckName(findViewById(R.id.EdtTxtName)) + "\n" +  CheckTop(findViewById(R.id.chckbx)) + "\n" + CheckTop(findViewById(R.id.chckbx2)) + "\nTotal = " + NumberFormat.getCurrencyInstance(Locale.US).format(num)+ "\nThank you");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     public void display(int num) {
